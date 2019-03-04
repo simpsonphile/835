@@ -1,0 +1,97 @@
+.c-btn-wrapper {
+    @extend %helper-clear-margins;
+    
+    margin-bottom: 20px;
+}
+
+.c-btn {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+
+    font-size: inherit;
+
+    border: 0;
+    background: none;
+
+    line-height: 1.3;
+
+    &__wrap {
+        @extend %display-flex;
+        @extend %align-items-center;
+        @extend %justify-content-center;
+        
+        height: 100%;
+    }
+
+    &__ico {
+        flex-shrink: 0;
+        
+        margin-left: 10px;
+
+        font-size: 0;
+
+        text-align: center;
+        
+        &:first-child {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+    }
+}
+
+.c-btn--hamburger {
+    display: none;
+
+    width: 60px;
+    height: 45px;
+    transform: rotate(0deg);
+    transition: transform .5s ease-in-out;
+}
+
+.c-btn--hamburger span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: $color_red;
+    border-radius: 5px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.c-btn--hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+.c-btn--hamburger span:nth-child(2),
+.c-btn--hamburger span:nth-child(3) {
+    top: 18px;
+}
+
+.c-btn--hamburger span:nth-child(4) {
+    top: 36px;
+}
+
+.c-btn--hamburger.is-active span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
+.c-btn--hamburger.is-active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.c-btn--hamburger.is-active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.c-btn--hamburger.is-active span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}

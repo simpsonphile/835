@@ -1,0 +1,49 @@
+.l-sec-section {
+    
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    transform-origin: left bottom;
+    transform: skewY(-25deg);
+    margin-top: 10rem;
+    padding-top: 15rem;
+
+    &__desc {
+        position: relative;
+        margin-top: 25rem;
+        order: 2;
+        transform: skewY(15deg);
+        max-width: 85rem;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: -6rem;
+            display: block;
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            background: red;
+            transform: translateY(-50%) skewY(-25deg);
+        }
+    }
+
+    &__title {
+        font-size: 8.5rem;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        span {
+            font-size: 15rem;
+            display: block;
+            font-weight: 700;
+        }
+    }
+
+    &__subtitle {
+        font-size: 3.1rem;
+        color: $color_gray;
+    }
+}

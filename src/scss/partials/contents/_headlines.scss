@@ -3,6 +3,6 @@
    ========================================================================== */
 .t-head {
     @extend %helper-clear-margins;
-
+    text-transform: uppercase;
     margin: 0;
 }

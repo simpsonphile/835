@@ -8,18 +8,19 @@
         {% include "head/head-links.twig" %}
     </head>
     <body>
-        {% import "partials/layouts/header.twig" as l_header %}
-        {{ l_header.render() }}
-
-        <main class="l-main">
-            <div class="l-inner">
+        <div class="l-page">
+            {% import "partials/layouts/header.twig" as l_header %}
+            {{ l_header.render() }}
+            
+            <main class="l-main">
                 <div class="l-main__content" data-css-spacing="top5 tablet(top3) phone(top1)" data-css-offset="tablet(top3) left2 desktop-small(left1)">
                     {% include "partials/layouts/section.twig" %}
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
+
         <footer class="l-footer" data-css-spacing="top2 tablet(top1) left5 tablet(left3)">
-            <div class="l-inner">
+            <div class="l-inner l-footer__inner">
                 {% include "partials/layouts/footer.twig" %}
             </div>
         </footer>

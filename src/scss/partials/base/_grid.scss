@@ -5,14 +5,14 @@
 .l-grid {
     @extend %display-flex;
     @extend %align-items-stretch;
-    @extend %justify-content-flex-start;
+    @extend %justify-content-center;
     @extend %flex-wrap-wrap;
 }
 
 .l-grid__item {
     @extend %display-flex;
 
-    flex-grow: 1;
+    flex-grow: 0;
 }
 
 .l-grid__item .f-field,

@@ -2,12 +2,34 @@
     background: $color_black_2;
     position: relative;
     min-height: 100vh;
-    height: 190rem;
+    height: 90rem;
     z-index: 0;
+
+    @include media('>=l') {
+        height: 120rem;
+    }
+
+    @include media('>=l-s') {
+        height: 110rem;
+    }
+
+    @include media('<=t') {
+        min-height: unset;
+        height: 110rem;
+    }
+
+    @include media('<=m') {
+        height: 80rem;
+    }
+
+    @include media('<=m-s') {
+        height: 55rem;
+    }
+
 
     &__background {
         position: absolute;
-        top: 3rem;
+        top: 1.5rem;
         bottom: 0;
         left: 0;
         right: 0;
@@ -18,58 +40,203 @@
 
     &__inner {
         position: relative;
-        z-index: 1;
-        top: 3rem;
+        z-index: 0;
+        top: 1.5rem;
         height: 100%;
     }
 
-    &__intro {
+    &__left-sticker {
         background: linear-gradient(90deg, rgba($color_violet, .8), rgba($color_blue, .8));
         color: white;
-        padding: 2rem;
-        width: 85rem;
-        margin-left: 20rem;
+        padding: 1.85rem;
+        max-width: 39rem;
+        margin-left: 6rem;
         height: 100%;
+
+        @include media('<=t-m') {
+            margin-left: -5rem;
+        }
+
+        @include media('<=m') {
+            margin-left: -10rem;
+            width: 29.25rem;
+        }
+
+        @include media('<=m-s') {
+            margin-left: -4.5rem;
+            width: 22rem;
+        }
     }
 
     &__title-sticker {
 
+        h1.t-head {
+            transform: scaleY(1.5);
+            line-height: .8;
+            margin-top: 11.1rem;
+            @include media('<=m-s') {
+                margin-top: 5rem;
+            }
+        }
+
+        h1::after {
+            margin-top: .6rem;
+            display: block;
+            content: "";
+            width: 21.35rem;
+            height: .8rem;
+            background: $color_white;
+
+            @include media('<=m') {
+                width: 16rem;
+            }
+
+            @include media('<=m-s') {
+                width: 12rem;
+            }
+            
+        }
+
         h1 span {
             display: block;
-            line-height: 1;
             font-weight: 400;
 
             &:nth-child(1) {
-                font-size: 16.5rem;
+                font-size: 8.25rem;
+                margin-bottom: .75rem;
+
+                @include media('<=m') {
+                    font-size: 6.2rem;
+                }
+
+                @include media('<=m-s') {
+                    font-size: 4.65rem;
+                }
             }
             &:nth-child(2) {
-                font-size: 25rem;
+                font-size: 12.5rem;     
                 font-weight: 700;
+                letter-spacing: -6px;
+                margin-bottom: -0.475rem;
+
+                @include media('<=m') {
+                    font-size: 9.375rem;
+                    letter-spacing: -5px;
+                }
+
+                @include media('<=m-s') {
+                    font-size: 7rem;
+                    letter-spacing: -4px;
+                }
+
             }
             &:nth-child(3) {
-                font-size: 18rem;
+                font-size: 9rem;
+                @include media('<=m') {
+                    font-size: 6.72rem;
+                }
+
+                @include media('<=m-s') {
+                    font-size: 5rem;
+                }
             }
         }
     }
 
     &__subtitle {
-        font-size: 7rem;
+        padding-top: 6rem;
+        font-size: 3.5rem;
+        font-family: 'Avenir', sans-serif;
+        word-spacing: 3.5px;
+        line-height: 1.2;
+        letter-spacing: .5px;
+
+        @include media('<=m') {
+            font-size: 2.6rem;
+        }
+
+        @include media('<=m-s') {
+            font-size: 1.95rem;
+        }
     }
 
     &__right-sticker {
+        position: absolute;
+        top: 0;
+        right: 0;
         background-color: rgba($color_black, .8);
         color: $color_white;
         height: 100%;
+        padding: 3.75rem;
+        max-width: 31rem;
+
+        @include media('<=m') {
+            max-width: 23.25rem;
+            padding: 2.8rem;
+        }
+
+        @include media('<=m-s') {
+            max-width: 17.43rem;
+            padding: 2.1rem;
+        }
+
+        h2.t-head {
+            margin-top: 5rem;
+            font-size: 4.65rem;
+            line-height: .85;
+            letter-spacing: 2px;
+            transform: scaleY(1.5);
+            
+            @include media('<=m') {
+                font-size: 3.5rem;
+            }
+
+            @include media('<=m-s') {
+                font-size: 2.625rem;
+                margin-top: 2.5rem;
+            }
+
+            span {
+                display: block;
+                font-size: 6.9rem;
+                color: $color_blue;
+
+                @include media('<=m') {
+                    font-size: 5.25rem;
+                }
+
+                @include media('<=m-s') {
+                    font-size: 3.93rem;
+                }
+            }
+        }
+
+        p {
+            margin-top: 1.75rem;
+            font-family: 'Avenir', sans-serif;
+            font-size: 3.25rem;
+            line-height: 1.25;
+            word-spacing: 6px;
+
+            @include media('<=m') {
+                font-size: 2.4rem;
+                word-spacing: 0;
+            }
+
+            @include media('<=m-s') {
+                font-size: 1.8rem;
+            }
+        }
     }
 
     &__bottom-triangle {
         position: absolute;
-        z-index: 2;
+        z-index: 0;
         background: $color_white;
         transform: skewY(-25deg);
         transform-origin: left bottom;
-        bottom: -100rem;
-        height: 100rem;
+        bottom: -50rem;
+        height: 50rem;
         width: 100%;
 
     }
@@ -77,11 +244,9 @@
     &__bottom-bar {
         position: relative;
         background: linear-gradient(90deg, $color_violet, $color_blue);
-        height: 12rem;
+        height: 7.5rem;
         width: 100%;
         
-        
-
         &::before,
         &::after {
             width: 100%;
@@ -89,20 +254,15 @@
             position: absolute;
             display: block;
             background: $color_black_2;
-            height: 6rem;
+            height: 5rem;
         }
 
         &::before {
-            top: -6rem;
+            top: -4.5rem;
         }
 
         &::after {
-            bottom: -6rem;
+            bottom: -4.5rem;
         }
     }
-
-    &__inner {}
-    &__title-sticker {}
-    &__right-sticker {}
-
 }

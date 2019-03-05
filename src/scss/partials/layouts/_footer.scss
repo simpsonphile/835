@@ -1,4 +1,125 @@
 .l-footer {
+    
+    position: relative;
+    // margin-top: -42.75rem;
+
     background: $color_black;
     color: white;
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0 58px;
+    }
+
+    &__about {
+        padding: 2.75rem 0;
+        flex: 1 1 56%;
+        max-width: 56%;
+        display: flex;
+        align-items: center;      
+        border-right: 4px solid white;
+
+        @include media('<=m'){
+            flex: 1 1 100%;
+            max-width: 100%;
+            border-right: 0;
+        }
+
+        &-logo {
+            margin-right: 3rem;
+        }
+
+        &-title {
+            text-transform: uppercase;
+            font-size: 4.35rem;
+            font-weight: 700;
+            margin: 0;
+
+            @include media('<=t'){
+                font-size: 3.5rem;
+            }
+
+            span {
+                font-weight: 400;
+            }
+        }
+
+        &-desc {
+
+            p {
+                margin: 0;
+                font-size: 1.6rem;
+                letter-spacing: 1px;
+                padding-right: 2rem;
+
+                @include media('<=m'){
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    &__cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        flex: 1 1 44%;
+        max-width: 44%;
+        padding: 6.5rem 0;
+
+        @include media('<=m'){
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+
+        &-qr {
+            margin-left: 6.5rem;
+            margin-right: 2rem;
+
+            @include media('<=t'){
+                margin-left: 0;
+            }
+
+            img {
+                width: 8.5rem;
+                height: 8.5rem;
+
+                @include media('<=t'){
+                    width: 6rem;
+                    height: 6rem;
+                }
+            }
+        }
+
+        &-title {
+            a {
+                text-transform: uppercase;
+                display: flex;
+                flex-direction: column;
+                line-height: 1;
+
+                span:nth-child(1){
+                    font-size: 4.25rem;
+                    color: $color_white;
+                    text-decoration: underline;
+
+                    @include media('<=t'){
+                        font-size: 2.5rem;
+                    }
+                }
+                span:nth-child(2){
+                    font-size: 4.85rem;
+                    color: $color_blue;
+
+                    @include media('<=t'){
+                        font-size: 3rem;
+                    }
+                }
+                
+            }
+        }
+    }
 }

@@ -3,6 +3,8 @@
     width: 100%;
     background: linear-gradient(90deg, $color_violet, $color_blue);
     color: white;
+    max-width: 360px;
+    margin: 0 auto;
 
     &--2{
         background: linear-gradient(180deg, $color_violet, $color_blue);
@@ -10,44 +12,80 @@
 
     &__inner {
         transform: skewY(25deg);
-        padding: 12rem 4rem;   
+        padding: 8rem 3.6rem 5rem;
+        @include media('<=t-m'){
+            padding: 10rem 5rem;
+        }
+    }
+
+    &--2 &__inner {
+        padding: 8rem 4.5rem 5rem;
+        @include media('<=t-m'){
+            padding: 10rem 5rem;
+        }
     }
 
     &__icon {
         text-align: center;
+        img {
+            margin-top: .5rem;
+            margin-left: -2rem;
+            @include media('<=m-s'){
+                width: 45%;
+                height: auto;
+            }
+        }
+    }
+
+    &--3 &__icon {
+        img {
+            margin-top: -1rem;
+        }
     }
 
     &__title-wrap {
         display: flex;
-        justify-content: center;
+        padding: 0 .35rem;
     }
 
     &__title {
-        font-size: 7rem;
+        font-size: 3.5rem;
         font-weight: 700;
         line-height: 1;
+        letter-spacing: 2px;
         text-transform: uppercase;
+        margin-bottom: 2.25rem;
 
         span {
             display: block;
-            font-size: 5rem;
+            font-size: 2.5rem;
             font-weight: 400;
+            letter-spacing: 4px;
+        }
+    }
+
+    &--2 &__title {
+        padding: 0 4rem;
+        @include media('<=t-m'){
+            padding: 0;
         }
     }
 
     &__text {
-        font-size: 3.8rem;
+        font-size: 1.9rem;
+        line-height: 1.25;
+        letter-spacing: 1px;
     }
 
     &::before {
         position: absolute;
         z-index: -1;
-        bottom: -4rem;   
+        bottom: -3.75rem;   
         content: "";
         display: block;
         background-color: $color_black;
-        width: 70%;
-        height: 70%;
+        width: 24.25rem;
+        height: 27.5rem;
     }
 
     &--1::before {
@@ -57,7 +95,7 @@
         left: 15%;
     }
     &--3::before {
-        left: -2rem;
+        left: -1.75rem;
     }
 
 }

@@ -1,8 +1,5 @@
-.l-footer {
-    
+.l-footer { 
     position: relative;
-    // margin-top: -42.75rem;
-
     background: $color_black;
     color: white;
 
@@ -18,7 +15,7 @@
         flex: 1 1 56%;
         max-width: 56%;
         display: flex;
-        align-items: center;      
+        align-items: center;
         border-right: 4px solid white;
 
         @include media('<=m'){
@@ -95,6 +92,7 @@
         }
 
         &-title {
+
             a {
                 text-transform: uppercase;
                 display: flex;
@@ -118,7 +116,6 @@
                         font-size: 3rem;
                     }
                 }
-                
             }
         }
     }

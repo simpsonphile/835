@@ -1,10 +1,10 @@
 .parsley-error {
-    border-color: $color_red;
+    border-color: red;
 }
 
 .f-control--checkbox.parsley-error {
     background: none;
-    color: $color_red;
+    color: red;
 }
 
 .parsley-errors-list {
@@ -16,7 +16,7 @@
 
     text-transform: uppercase;
 
-    color: $color_red;
+    color: red;
 
     @include media("<=l") {
         font-size: 1.4rem;

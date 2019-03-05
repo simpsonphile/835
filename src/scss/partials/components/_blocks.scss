@@ -80,7 +80,7 @@
     &::before {
         position: absolute;
         z-index: -1;
-        bottom: -3.75rem;   
+        bottom: -3.75rem;
         content: "";
         display: block;
         background-color: $color_black;
@@ -97,5 +97,4 @@
     &--3::before {
         left: -1.75rem;
     }
-
 }

@@ -12,13 +12,7 @@
 .l-grid__item {
     @extend %display-flex;
 
-    flex-grow: 0;
-}
-
-.l-grid__item .f-field,
-.l-grid__item .c-block,
-.l-grid__item__inner {
-    width: 100%;
+    flex-grow: 1;
 }
 
 @for $i from 1 through 12 {

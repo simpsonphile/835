@@ -1,0 +1,77 @@
+.l-sec-intro {
+    margin-top: 14rem;
+    padding-top: 2.5rem;
+    
+    background: $color_white;
+
+    transform-origin: left bottom;
+    transform: skewY(-25deg);
+}
+
+.l-sec-intro__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.l-sec-intro__desc {
+    position: relative;
+    order: 2;
+    
+    max-width: 35rem;
+    margin-top: 8.5rem;
+    
+    transform: skewY(25deg);
+}
+
+.l-sec-intro__desc::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: -9.5rem;
+
+    width: 5.6rem;
+    height: 6.55rem;
+    
+    background-image: url(../img/triangle.png);
+    background-size: 5.6rem 6.55rem;
+    
+    transform: translateY(-50%);
+
+    @include media('<=m-s'){
+        left: -5.5rem;
+    
+        width: 2.8rem;
+        height: 3.275rem;
+    
+        background-size: 2.8rem 3.275rem;
+    }
+}
+
+
+.l-sec-intro__title {
+    margin-bottom: -1.7rem;
+    
+    font-size: 4.25rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .6rem;
+}
+
+.l-sec-intro__title span {
+    display: block;
+    
+    font-size: 7.5rem;
+    font-weight: 700;
+    letter-spacing: -0.4rem;
+}
+
+
+.l-sec-intro__subtitle {
+    margin: 0;
+    
+    color: $color_gray;
+    
+    font-size: 1.55rem;
+}

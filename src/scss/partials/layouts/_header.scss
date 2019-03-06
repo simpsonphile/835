@@ -1,9 +1,16 @@
 .l-header {
-    background: $color_black_2;
     position: relative;
-    min-height: 100vh;
+
     height: 90rem;
+    min-height: 100vh;
+
+    background: $color_black_2;
+
     z-index: 0;
+
+    @media screen and (min-width: 2200px){
+        height: 140rem;
+    }
 
     @include media('>=l') {
         height: 120rem;
@@ -14,8 +21,8 @@
     }
 
     @include media('<=t') {
-        min-height: unset;
         height: 110rem;
+        min-height: unset;
     }
 
     @include media('<=m') {
@@ -25,245 +32,274 @@
     @include media('<=m-s') {
         height: 55rem;
     }
+}
 
+.l-header__bg {
+    position: absolute;
+    top: 1.5rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
-    &__background {
-        position: absolute;
-        top: 1.5rem;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-image: url(../img/hero.png);
-        background-repeat: no-repeat;
-        background-size: cover;
+    background-image: url(../img/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.l-header__inner {
+    position: relative;
+    top: 1.5rem;
+
+    height: 100%;
+
+    z-index: 0;
+}
+
+.l-header__title {
+    text-transform: uppercase;
+
+    transform: scaleY(1.5);
+
+    span {
+        display: block;
+    }
+}
+
+.l-header__title--has-border::after {
+    content: "";
+    display: block;
+
+    height: .8rem;
+    width: 21.35rem;
+    margin-top: .6rem;
+
+    background: $color_white;
+
+    @include media('<=m') {
+        width: 16rem;
     }
 
-    &__inner {
-        position: relative;
-        z-index: 0;
-        top: 1.5rem;
-        height: 100%;
+    @include media('<=m-s') {
+        width: 12rem;
+    }
+}
+
+.l-header__subtitle {
+    font-family: 'Avenir', sans-serif;
+}
+
+.l-header__left-sticker {
+    height: 100%;
+    max-width: 39rem;
+    padding: 1.85rem;
+    margin-left: 6rem;
+
+    background: linear-gradient(90deg, rgba($color_violet, .8), rgba($color_blue, .8));
+    color: $color_white;
+
+    @include media('<=t-m') {
+        margin-left: -5rem;
     }
 
-    &__left-sticker {
-        background: linear-gradient(90deg, rgba($color_violet, .8), rgba($color_blue, .8));
-        color: white;
-        padding: 1.85rem;
-        max-width: 39rem;
-        margin-left: 6rem;
-        height: 100%;
+    @include media('<=m') {
+        width: 29.25rem;
+        margin-left: -10rem;
+    }
 
-        @include media('<=t-m') {
-            margin-left: -5rem;
-        }
+    @include media('<=m-s') {
+        width: 22rem;
+        margin-left: -4.5rem;
+    }
+}
 
-        @include media('<=m') {
-            margin-left: -10rem;
-            width: 29.25rem;
-        }
+.l-header__left-sticker .l-header__title {
+        margin-top: 11.1rem;
+
+        line-height: .8;
 
         @include media('<=m-s') {
-            margin-left: -4.5rem;
-            width: 22rem;
-        }
-    }
-
-    &__title-sticker {
-
-        h1.t-head {
-            transform: scaleY(1.5);
-            line-height: .8;
-            margin-top: 11.1rem;
-            @include media('<=m-s') {
-                margin-top: 5rem;
-            }
-        }
-
-        h1::after {
-            margin-top: .6rem;
-            display: block;
-            content: "";
-            width: 21.35rem;
-            height: .8rem;
-            background: $color_white;
-
-            @include media('<=m') {
-                width: 16rem;
-            }
-
-            @include media('<=m-s') {
-                width: 12rem;
-            } 
-        }
-
-        h1 span {
-            display: block;
-            font-weight: 400;
-
-            &:nth-child(1) {
-                font-size: 8.25rem;
-                margin-bottom: .75rem;
-
-                @include media('<=m') {
-                    font-size: 6.2rem;
-                }
-
-                @include media('<=m-s') {
-                    font-size: 4.65rem;
-                }
-            }
-
-            &:nth-child(2) {
-                font-size: 12.5rem;     
-                font-weight: 700;
-                letter-spacing: -6px;
-                margin-bottom: -0.475rem;
-
-                @include media('<=m') {
-                    font-size: 9.375rem;
-                    letter-spacing: -5px;
-                }
-
-                @include media('<=m-s') {
-                    font-size: 7rem;
-                    letter-spacing: -4px;
-                }
-
-            }
-            
-            &:nth-child(3) {
-                font-size: 9rem;
-                @include media('<=m') {
-                    font-size: 6.72rem;
-                }
-
-                @include media('<=m-s') {
-                    font-size: 5rem;
-                }
-            }
-        }
-    }
-
-    &__subtitle {
-        padding-top: 6rem;
-        font-size: 3.5rem;
-        font-family: 'Avenir', sans-serif;
-        word-spacing: 3.5px;
-        line-height: 1.2;
-        letter-spacing: .5px;
-
-        @include media('<=m') {
-            font-size: 2.6rem;
-        }
-
-        @include media('<=m-s') {
-            font-size: 1.95rem;
-        }
-    }
-
-    &__right-sticker {
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: rgba($color_black, .8);
-        color: $color_white;
-        height: 100%;
-        padding: 3.75rem;
-        max-width: 31rem;
-
-        @include media('<=m') {
-            max-width: 23.25rem;
-            padding: 2.8rem;
-        }
-
-        @include media('<=m-s') {
-            max-width: 17.43rem;
-            padding: 2.1rem;
-        }
-
-        h2.t-head {
             margin-top: 5rem;
-            font-size: 4.65rem;
-            line-height: .85;
-            letter-spacing: 2px;
-            transform: scaleY(1.5);
-            
-            @include media('<=m') {
-                font-size: 3.5rem;
-            }
-
-            @include media('<=m-s') {
-                font-size: 2.625rem;
-                margin-top: 2.5rem;
-            }
-
-            span {
-                display: block;
-                font-size: 6.9rem;
-                color: $color_blue;
-
-                @include media('<=m') {
-                    font-size: 5.25rem;
-                }
-
-                @include media('<=m-s') {
-                    font-size: 3.93rem;
-                }
-            }
         }
+}
+    
+.l-header__left-sticker .l-header__title span {
+    font-weight: 400;
+}
 
-        p {
-            margin-top: 1.75rem;
-            font-family: 'Avenir', sans-serif;
-            font-size: 3.25rem;
-            line-height: 1.25;
-            word-spacing: 6px;
+.l-header__left-sticker .l-header__title span:nth-child(1) {
+    margin-bottom: .75rem;
 
-            @include media('<=m') {
-                font-size: 2.4rem;
-                word-spacing: 0;
-            }
+    font-size: 8.25rem;
 
-            @include media('<=m-s') {
-                font-size: 1.8rem;
-            }
-        }
+    @include media('<=m') {
+        font-size: 6.2rem;
     }
 
-    &__bottom-triangle {
+    @include media('<=m-s') {
+        font-size: 4.65rem;
+    }
+}
+
+.l-header__left-sticker .l-header__title span:nth-child(2) {
+    margin-bottom: -0.475rem;
+
+    font-size: 12.5rem;
+    font-weight: 700;
+    letter-spacing: -0.6rem;
+
+    @include media('<=m') {
+        font-size: 9.375rem;
+        letter-spacing: -0.5rem;
+    }
+
+    @include media('<=m-s') {
+        font-size: 7rem;
+        letter-spacing: -0.4rem;
+    }
+
+}
+
+.l-header__left-sticker .l-header__title span:nth-child(3) {
+    font-size: 9rem;
+
+    @include media('<=m') {
+        font-size: 6.72rem;
+    }
+
+    @include media('<=m-s') {
+        font-size: 5rem;
+    }
+}
+
+.l-header__left-sticker .l-header__subtitle {
+    padding-top: 6rem;
+
+    font-size: 3.5rem;
+    line-height: 1.2;
+    letter-spacing: .5rem;
+    word-spacing: .35rem;
+
+    @include media('<=m') {
+        font-size: 2.6rem;
+    }
+
+    @include media('<=m-s') {
+        font-size: 1.95rem;
+    }
+}
+
+.l-header__right-sticker {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    max-width: 31rem;
+    padding: 3.75rem;
+
+    background-color: rgba($color_black, .8);
+    color: $color_white;
+
+    @include media('<=m') {
+        max-width: 23.25rem;
+        padding: 2.8rem;
+    }
+
+    @include media('<=m-s') {
+        max-width: 17.43rem;
+        padding: 2.1rem;
+    }
+}
+
+.l-header__right-sticker .l-header__title {
+    margin-top: 5rem;
+
+    font-size: 4.65rem;
+    line-height: .85;
+    letter-spacing: .2rem;
+    
+    @include media('<=m') {
+        font-size: 3.5rem;
+    }
+
+    @include media('<=m-s') {
+        font-size: 2.625rem;
+        margin-top: 2.5rem;
+    }
+}
+
+.l-header__right-sticker .l-header__title span {
+    color: $color_blue;
+
+    font-size: 6.9rem;
+
+    @include media('<=m') {
+        font-size: 5.25rem;
+    }
+
+    @include media('<=m-s') {
+        font-size: 3.93rem;
+    }
+}
+    
+.l-header__right-sticker .l-header__subtitle {
+    margin-top: 1.75rem;
+
+    font-size: 3.25rem;
+    line-height: 1.25;
+    word-spacing: .6rem;
+
+    @include media('<=m') {
+        font-size: 2.4rem;
+        word-spacing: 0;
+    }
+
+    @include media('<=m-s') {
+        font-size: 1.8rem;
+    }
+}
+
+.l-header__bottom-triangle {
+    position: absolute;
+    bottom: -50rem;
+
+    height: 50rem;
+    width: 100%;
+
+    background: $color_white;
+
+    transform: skewY(-25deg);
+    transform-origin: left bottom;
+
+    z-index: 0;
+}
+
+.l-header__bottom-bar {
+    position: relative;
+    
+    height: 7.5rem;
+    width: 100%;
+    
+    background: linear-gradient(90deg, $color_violet, $color_blue);
+    
+    &::before,
+    &::after {
+        content: '';
+
         position: absolute;
-        z-index: 0;
-        background: $color_white;
-        transform: skewY(-25deg);
-        transform-origin: left bottom;
-        bottom: -50rem;
-        height: 50rem;
-        width: 100%;
+        display: block;
 
+        width: 100%;
+        height: 5rem;
+
+        background: $color_black_2;
     }
 
-    &__bottom-bar {
-        position: relative;
-        background: linear-gradient(90deg, $color_violet, $color_blue);
-        height: 7.5rem;
-        width: 100%;
-        
-        &::before,
-        &::after {
-            width: 100%;
-            content: '';
-            position: absolute;
-            display: block;
-            background: $color_black_2;
-            height: 5rem;
-        }
+    &::before {
+        top: -4.5rem;
+    }
 
-        &::before {
-            top: -4.5rem;
-        }
-
-        &::after {
-            bottom: -4.5rem;
-        }
+    &::after {
+        bottom: -4.5rem;
     }
 }

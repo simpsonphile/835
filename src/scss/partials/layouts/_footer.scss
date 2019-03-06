@@ -1,122 +1,133 @@
-.l-footer { 
+.l-footer {
     position: relative;
+
     background: $color_black;
     color: white;
+}
 
-    &__inner {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        padding: 0 58px;
-    }
+.l-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
-    &__about {
-        padding: 2.75rem 0;
-        flex: 1 1 56%;
-        max-width: 56%;
-        display: flex;
-        align-items: center;
-        border-right: 4px solid white;
+    padding: 0 5.8rem;
+}
 
-        @include media('<=m'){
-            flex: 1 1 100%;
-            max-width: 100%;
-            border-right: 0;
-        }
+.l-footer__about {
+    display: flex;
+    align-items: center;
+    flex: 1 1 56%;
 
-        &-logo {
-            margin-right: 3rem;
-        }
+    max-width: 56%;
+    padding: 2.75rem 0;
+    
+    border-right: .4rem solid white;
 
-        &-title {
-            text-transform: uppercase;
-            font-size: 4.35rem;
-            font-weight: 700;
-            margin: 0;
+    @include media('<=m'){
+        flex: 1 1 100%;
 
-            @include media('<=t'){
-                font-size: 3.5rem;
-            }
+        max-width: 100%;
 
-            span {
-                font-weight: 400;
-            }
-        }
-
-        &-desc {
-
-            p {
-                margin: 0;
-                font-size: 1.6rem;
-                letter-spacing: 1px;
-                padding-right: 2rem;
-
-                @include media('<=m'){
-                    padding-right: 0;
-                }
-            }
-        }
-    }
-
-    &__cta {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-        flex: 1 1 44%;
-        max-width: 44%;
-        padding: 6.5rem 0;
-
-        @include media('<=m'){
-            flex: 1 1 100%;
-            max-width: 100%;
-        }
-
-        &-qr {
-            margin-left: 6.5rem;
-            margin-right: 2rem;
-
-            @include media('<=t'){
-                margin-left: 0;
-            }
-
-            img {
-                width: 8.5rem;
-                height: 8.5rem;
-
-                @include media('<=t'){
-                    width: 6rem;
-                    height: 6rem;
-                }
-            }
-        }
-
-        &-title {
-
-            a {
-                text-transform: uppercase;
-                display: flex;
-                flex-direction: column;
-                line-height: 1;
-
-                span:nth-child(1){
-                    font-size: 4.25rem;
-                    color: $color_white;
-                    text-decoration: underline;
-
-                    @include media('<=t'){
-                        font-size: 2.5rem;
-                    }
-                }
-                span:nth-child(2){
-                    font-size: 4.85rem;
-                    color: $color_blue;
-
-                    @include media('<=t'){
-                        font-size: 3rem;
-                    }
-                }
-            }
-        }
+        border-right: 0;
     }
 }
+
+.l-footer__logo-wrap {
+    margin-right: 3rem;
+}
+
+.l-footer__title {
+    margin: 0;
+    
+    text-transform: uppercase;
+    font-size: 4.35rem;
+    font-weight: 700;
+
+    @include media('<=t'){
+        font-size: 3.5rem;
+    }
+}
+
+.l-footer__title span {
+    font-weight: 400;
+}
+
+.l-footer__desc {
+    margin: 0;
+    padding-right: 2rem;
+
+    font-size: 1.6rem;
+    letter-spacing: .1rem;
+
+    @include media('<=m'){
+        padding-right: 0;
+    }
+}
+
+.l-footer__cta {
+    display: flex;
+    flex: 1 1 44%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+    max-width: 44%;
+    padding: 6.5rem 0;
+
+    @include media('<=m'){
+        flex: 1 1 100%;
+
+        max-width: 100%;
+    }
+}
+
+
+.l-footer__qr-wrap {
+    margin-left: 6.5rem;
+    margin-right: 2rem;
+
+    @include media('<=t'){
+        margin-left: 0;
+    }
+}
+
+.l-footer__qr {
+    width: 8.5rem;
+    height: 8.5rem;
+
+    @include media('<=t'){
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+
+.l-footer__phone {
+    display: flex;
+    flex-direction: column;
+
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.l-footer__phone span:nth-child(1){
+    color: $color_white;
+    
+    font-size: 4.25rem;
+    text-decoration: underline;
+
+    @include media('<=t'){
+        font-size: 2.5rem;
+    }
+}
+
+.l-footer__phone span:nth-child(2){
+    color: $color_blue;
+
+    font-size: 4.85rem;
+
+    @include media('<=t'){
+        font-size: 3rem;
+    }
+}
+

@@ -1,0 +1,97 @@
+.c-box {
+    position: relative;
+    
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    
+    background: linear-gradient(90deg, $color_violet, $color_blue);
+    color: white;
+}
+
+.c-box--bg-alt {
+    background: linear-gradient(180deg, $color_violet, $color_blue);
+}
+
+.c-box--has-shadow::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3.75rem;
+    
+    width: 24.25rem;
+    height: 27.5rem;
+    
+    background-color: $color_black;
+
+    z-index: -1;
+}
+
+.c-box--shadow-right::before {
+    left: 25%;
+}
+
+.c-box--shadow-mid::before {
+    left: 15%;
+}
+
+.c-box--shadow-left::before {
+    left: -1.75rem;
+}
+
+.c-box__inner {
+    padding: 8rem 3.6rem 5rem;
+    
+    transform: skewY(25deg);
+
+    @include media('<=t-m'){
+        padding: 10rem 5rem;
+    }
+}
+
+.c-box__ico-container {
+    text-align: center;
+}
+
+.c-box__ico {
+    margin-top: .5rem;
+    margin-left: -2rem;
+
+    @include media('<=m-s'){
+        width: 45%;
+        height: auto;
+    }
+}
+
+.c-box__title-wrap {
+    display: flex;
+
+    padding: 0 .35rem;
+}
+
+.c-box__title {
+    margin-bottom: 2.25rem;
+
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+
+.c-box__title span {
+    display: block;
+
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: .4rem;
+}
+
+.c-box__text {
+    font-size: 1.9rem;
+    line-height: 1.25;
+    letter-spacing: .1rem;
+}
+
+
+
